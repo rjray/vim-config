@@ -116,6 +116,8 @@ endfunction
 command B call PasteFromClipboard()
 
 " Auto-commands based on file-type and/or buffer life-cycle
+autocmd BufNewFile,BufReadPost,FilterReadPost,FileReadPost,Syntax * SpaceHi
+au FileType help NoSpaceHi
 au! FileType gitcommit setlocal textwidth=79 noexpandtab 
 au! FileType java   set shiftwidth=4 tabstop=4
 au! FileType perl          :call PerlMappings()
