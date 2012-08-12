@@ -26,3 +26,6 @@
 	path = .vim/bundle/ack
 	url = git://github.com/mileszs/ack.vim.git
     ignore = dirty
+[submodule ".vim/bundle/spacehi"]
+	path = .vim/bundle/spacehi
+	url = git://github.com/vim-scripts/spacehi.vim.git
