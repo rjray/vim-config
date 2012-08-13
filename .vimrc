@@ -29,6 +29,19 @@ set visualbell
 set background=light
 set ruler
 
+" Configure a statusline
+set laststatus=2
+set statusline=
+set statusline+=%<%f%m%r%h%w
+set statusline+=%=
+set statusline+=\ [%{&ft}]
+set statusline+=\ [%{&ff}] 
+set statusline+=\ [%{&fenc}]
+set statusline+=\ [%03.3b,%02.2B]
+set statusline+=\ [%l,%v]
+set statusline+=\ [%L]
+set statusline+=\ [%p%%]
+
 " Variable assignments
 let mapleader = ","
 let MRU_Max_Entries = 25
