@@ -21,7 +21,7 @@ set showcmd
 set fileformat=unix
 set wildmenu
 set wildmode=list:longest,full
-set ignorecase 
+set ignorecase
 set smartcase
 set title
 set scrolloff=3
@@ -51,6 +51,8 @@ let MRU_Window_Height = 15
 " Key-mappings
 map Q gq
 map <C-n> :wn<CR>
+nmap <space> i_<Esc>r
+nmap K i<CR><Esc>k$
 nmap <C-n><C-n> :set invnumber<cr>
 nmap <silent> <BS> :nohlsearch<CR>
 noremap <Leader>w <C-W><C-W>:res<cr>
@@ -65,7 +67,10 @@ imap <C-Right> <Esc>:bnext<CR>
 map <C-Left> :bprev<CR>
 imap <C-Left> <Esc>:bprev<CR>
 map <C-Del> :bd<CR>
-map <F2> :NERDTreeToggle<CR>
+" Use <f8> to insert paste-buffer text
+nmap <F8> :set paste<CR>i
+imap <F8> <ESC>:set paste<CR>i<Right>
+au InsertLeave * set nopaste
 
 " Enable file-type detection, per-filetype plugins, and per-filetype indent
 filetype plugin indent on
