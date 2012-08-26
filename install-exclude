@@ -1,5 +1,5 @@
 .cvsignore
-.git/
+.git
 .gitattributes
 .gitignore
 .gitmodules
