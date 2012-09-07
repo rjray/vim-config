@@ -75,6 +75,9 @@ au InsertLeave * set nopaste
 " Enable file-type detection, per-filetype plugins, and per-filetype indent
 filetype plugin indent on
 
+" Treat files ending in .thpl as Perl:
+au BufRead,BufNewFile *.thpl set filetype=perl
+
 " Function declarations
 function! PerlMappings()
     noremap <buffer> ,cv :call Coverage()<cr>
