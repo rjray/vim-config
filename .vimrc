@@ -35,7 +35,7 @@ set statusline=
 set statusline+=%<%f%m%r%h%w
 set statusline+=%=
 set statusline+=\ [%{&ft}]
-set statusline+=\ [%{&ff}] 
+set statusline+=\ [%{&ff}]
 set statusline+=\ [%{&fenc}]
 set statusline+=\ [%03.3b,%02.2B]
 set statusline+=\ [%l,%v]
@@ -49,19 +49,13 @@ let MRU_Exclude_Files = '^/tmp/.*\|^/var/tmp/.*'
 let MRU_Window_Height = 15
 
 " Key-mappings
-map Q gq
 map <C-n> :wn<CR>
 nmap <space> i_<Esc>r
 nmap K i<CR><Esc>k$
-nmap <C-n><C-n> :set invnumber<cr>
+nmap <C-n><C-n> :set invnumber<CR>
 nmap <silent> <BS> :nohlsearch<CR>
-noremap <Leader>w <C-W><C-W>:res<cr>
 nnoremap <C-e> 3<C-e>
 nnoremap <C-y> 3<C-y>
-nnoremap ' `
-nnoremap ` '
-map H ^
-map L $
 map <C-Right> :bnext<CR>
 imap <C-Right> <Esc>:bnext<CR>
 map <C-Left> :bprev<CR>
@@ -80,12 +74,12 @@ au BufRead,BufNewFile *.thpl set filetype=perl
 
 " Function declarations
 function! PerlMappings()
-    noremap <buffer> ,cv :call Coverage()<cr>
-    noremap K :!perldoc <cword> <bar><bar> perldoc -f <cword><cr>
+    noremap <buffer> ,cv :call Coverage()<CR>
+    noremap <buffer> <leader>k :!perldoc <cword> <bar><bar> perldoc -f <cword><CR>
     if $HOST == "rjray"
-        nmap <C-F6> :%!perltidy --profile=.perltidyrc-netapp<cr>
+        nmap <C-F6> :%!perltidy --profile=.perltidyrc-netapp<CR>
     else
-        nmap <C-F6> :%!perltidy<cr>
+        nmap <C-F6> :%!perltidy<CR>
     endif
 endfunction
 
@@ -104,8 +98,8 @@ endfunction
 
 function! XMLMappings()
     set shiftwidth=2 tabstop=2 formatoptions=t encoding=utf-8 whichwrap=<,>,h,l
-    noremap <leader>xf :%!xmllint --format %<cr>
-    noremap <leader>xp :call Xpath()<cr>
+    noremap <leader>xf :%!xmllint --format %<CR>
+    noremap <leader>xp :call Xpath()<CR>
 endfunction
 
 function! Xpath()
@@ -139,7 +133,7 @@ command B call PasteFromClipboard()
 " Auto-commands based on file-type and/or buffer life-cycle
 autocmd BufNewFile,BufReadPost,FilterReadPost,FileReadPost,Syntax * SpaceHi
 au FileType help NoSpaceHi
-au! FileType gitcommit setlocal textwidth=79 noexpandtab 
+au! FileType gitcommit setlocal textwidth=79 noexpandtab
 au! FileType java   set shiftwidth=4 tabstop=4
 au! FileType perl          :call PerlMappings()
 au! FileType xml           :call XMLMappings()
@@ -148,7 +142,7 @@ au! BufRead,BufNewFile *.t :call PerlTestMappings()
 au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
 au! FileType html  set shiftwidth=2 tabstop=2 formatoptions=t whichwrap=<,>,h,l
 au FileType make  set noexpandtab
-au FileType text setlocal textwidth=79
+au FileType text  set textwidth=79
 augroup HelpInTabs
     au!
     au BufEnter *.txt call HelpInNewTab()
