@@ -140,7 +140,7 @@ au! FileType xml           :call XMLMappings()
 au! FileType xslt          :call XMLMappings()
 au! BufRead,BufNewFile *.t :call PerlTestMappings()
 au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
-au! FileType html  set shiftwidth=2 tabstop=2 formatoptions=t whichwrap=<,>,h,l
+au! FileType html,xhtml set shiftwidth=2 tabstop=2 formatoptions=t whichwrap=<,>,h,l
 au FileType make  set noexpandtab
 au FileType text  set textwidth=79
 augroup HelpInTabs
