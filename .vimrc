@@ -39,7 +39,6 @@ set statusline+=\ [%{&ff}]
 set statusline+=\ [%{&fenc}]
 set statusline+=\ [%03.3b,%02.2B]
 set statusline+=\ [%l,%v]
-set statusline+=\ [%L]
 set statusline+=\ [%p%%]
 
 " Variable assignments
@@ -49,13 +48,13 @@ let MRU_Exclude_Files = '^/tmp/.*\|^/var/tmp/.*'
 let MRU_Window_Height = 15
 
 " Key-mappings
-map <C-n> :wn<CR>
 nmap <space> i_<Esc>r
-nmap K i<CR><Esc>k$
 nmap <C-n><C-n> :set invnumber<CR>
 nmap <silent> <BS> :nohlsearch<CR>
 nnoremap <C-e> 3<C-e>
 nnoremap <C-y> 3<C-y>
+nnoremap ' `
+nnoremap ` '
 map <C-Right> :bnext<CR>
 imap <C-Right> <Esc>:bnext<CR>
 map <C-Left> :bprev<CR>
