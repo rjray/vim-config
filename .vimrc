@@ -34,6 +34,7 @@ set laststatus=2
 set statusline=
 set statusline+=%<%f%m%r%h%w
 set statusline+=%=
+set statusline+=\ %{fugitive#statusline()}
 set statusline+=\ [%{&ft}]
 set statusline+=\ [%{&ff}]
 set statusline+=\ [%{&fenc}]
