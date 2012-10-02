@@ -17,7 +17,7 @@ plugins. These submodule-style plugins are under `.vim/bundle`.
 ### Other People's Code
 
 Besides Pathogen and the submodules, I also have some code in `.vim/plugin`
-taken from http://www.vim.org/scripts/index.php that isnot bundled up for
+taken from http://www.vim.org/scripts/index.php that is not bundled up for
 Pathogen usage.
 
 ### My Code
